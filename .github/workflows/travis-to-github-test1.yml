@@ -31,7 +31,7 @@ jobs:
 
       - name: Import Libraries
         run: |
-          sudo apt-get updat
+          sudo apt-get update
           sudo apt-get install -y texlive-base texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
           sudo apt-get install pandoc
           sudo apt-get install graphviz
