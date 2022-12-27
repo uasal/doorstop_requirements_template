@@ -4,9 +4,13 @@ name: Workflow GitHub CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: 
+      - gh-actions
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - gh-actions
+      - main
 
 # job to check out repo update and install dependencies and run scripts
 jobs:
