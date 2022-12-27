@@ -38,7 +38,7 @@ jobs:
 
       - name: Install
         run: |
-          pip install pipenv --upgrade-strategy==only-if-needed
+          pip install pipenv --upgrade-strategy=only-if-needed
           pipenv install --dev
 
       - name: Run deploy.sh
