@@ -1,0 +1,15 @@
+active: true
+additional notes: ''
+derived: false
+level: 1
+links:
+- Mission-02: 79070034b1a1744bace885529089f2cc
+mission success criteria: ''
+normative: true
+rationale: ''
+ref: ''
+reviewed: ce35d65c066a99144f5cd0b6cfba2f85
+short name: Science requirement I
+text: |
+  Mission shall be able to perform example measurement one
+verification plan: ''

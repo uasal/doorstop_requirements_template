@@ -1,0 +1,77 @@
+name: Workflow GitHub CI
+
+# Events and coresponding branches that initiate this workflow
+
+on:
+  push:
+    branches: 
+      - gh-actions
+      - main
+  pull_request:
+    branches:
+      - gh-actions
+      - main
+
+# job to check out repo update and install dependencies and run scripts
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+      # https://github.com/actions/setup-python#caching-packages-dependencies
+    steps:
+      - name: Checkout action
+        uses: actions/checkout@v3
+        
+      - name: Python-setup action
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.7'
+          cache: 'pip' # caching pip dependencies
+      - name: Run install for cache 
+        run: pip install -r requirements.txt
+
+      - name: Import Libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-base texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+          sudo apt-get install pandoc
+          sudo apt-get install graphviz
+
+      - name: Install
+        run: |
+          pip install pipenv --upgrade-strategy=only-if-needed
+          pipenv install --dev
+
+      - name: Run deploy.sh
+        run: bash deploy.sh
+
+      - name: Run sync_tex.sh with beamer files
+        run: bash sync_tex.sh ./dist beamer
+        
+     # <Not provided for brevity>
+     # At a minimum this job should upload artifacts using actions/upload-pages-artifact
+      - name: Upload static file # https://github.com/actions/upload-pages-artifact
+        uses: actions/upload-pages-artifact@v1
+
+  # https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#creating-a-custom-github-actions-workflow-to-publish-your-site
+  # https://github.com/actions/deploy-pages
+  # Deploy job
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

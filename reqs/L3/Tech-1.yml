@@ -1,0 +1,15 @@
+active: true
+additional notes: ''
+derived: false
+level: 1
+links:
+- SCI-01: f9801348ce3b33579655fabb64aa6d0f
+mission success criteria: ''
+normative: true
+rationale: ''
+ref: ''
+reviewed: e46d304c1cf8716689a2a16a0fedee90
+short name: Instrument Alpha
+text: |
+  Technical instrument requirement Alpha
+verification plan: ''
