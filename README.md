@@ -86,7 +86,7 @@ The template includes three levels which were created by the following commands:
 
 
 ## Most recently committed flowchart:
-![Most recently committed flowchart of requirements](Digraph_gv.png) Requirements flowchart
+![Most recently committed flowchart of requirements](dist/Digraph_gv.png) Requirements flowchart
 
 
 ## Continuous Integration 
