@@ -1,5 +1,4 @@
-Science requirement I 1 SCI-01 
-==============================
+# Science requirement I 1 SCI-01 
 
 Mission shall be able to perform example measurement one
 
@@ -7,8 +6,7 @@ Mission shall be able to perform example measurement one
 
 *Child links:*   [Tech-1](L3.markdown#1-tech-1-) 
 
-Science requirement II 1 SCI-02 
-===============================
+# Science requirement II 1 SCI-02 
 
 Mission shall be able to perform example measurement two
 
@@ -16,8 +14,7 @@ Mission shall be able to perform example measurement two
 
 *Child links:*   [Tech-2](L3.markdown#1-tech-2-) ,  [Tech-3](L3.markdown#1-tech-3-) 
 
-Science requirement III 1 SCI-03 
-================================
+# Science requirement III 1 SCI-03 
 
 Mission shall be able to perform example measurement three
 
