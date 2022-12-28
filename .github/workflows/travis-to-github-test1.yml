@@ -44,8 +44,7 @@ jobs:
       - name: Run deploy.sh
         run: bash deploy.sh
 
-      - name: Run sync_tex.sh with beamer files
-        run: bash sync_tex.sh ./dist beamer
+
         
      # <Not provided for brevity>
      # At a minimum this job should upload artifacts using actions/upload-pages-artifact
