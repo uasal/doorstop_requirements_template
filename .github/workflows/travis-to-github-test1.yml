@@ -43,13 +43,7 @@ jobs:
 
       - name: Run deploy.sh
         run: bash deploy.sh
-
-
         
-     # <Not provided for brevity>
-     # At a minimum this job should upload artifacts using actions/upload-pages-artifact
-      - name: Upload static file # https://github.com/actions/upload-pages-artifact
-
       - uses: actions/upload-artifact@v3
          with:
            name: compiled-beamer
