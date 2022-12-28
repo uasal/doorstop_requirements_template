@@ -45,7 +45,7 @@ jobs:
         run: bash deploy.sh
         
       - uses: actions/upload-artifact@v3
-         with:
+        with:
            name: compiled-beamer
            path: dist/beamer.pdf
 
